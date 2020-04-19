@@ -1,18 +1,18 @@
 Name: harbour-freiertag
-Summary: Freiertag Application 
-Version: 2.0
+Summary: Application to show german holidays.
+Version: 2.18
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
 Group: Qt/Qt
 URL: http://example.org/
-License: LICENSE
+License: GPLv3
 # This must be generated before uploading a package to a remote build service.
 # Usually this line does not need to be modified.
 Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |
-  Short description of my SailfishOS Application
+  Application can show german holidays for all states.
 Configure: none
 # The qtc5 builder inserts macros to allow QtCreator to have fine
 # control over qmake/make execution
@@ -36,11 +36,11 @@ Requires:
 
 # All installed files
 Files:
-  - '%{_bindir}'
+  - '%defattr(644,root,root,-)'
+  - '%attr(755,-,-) %{_bindir}'
   - '%{_datadir}/%{name}'
   - '%{_datadir}/applications/%{name}.desktop'
-  - '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
+  - '%{_datadir}/icons/hicolor/*/apps/%{name}.png'
 
 # For more information about yaml and what's supported in Sailfish OS
 # build system, please see https://wiki.merproject.org/wiki/Spectacle
-

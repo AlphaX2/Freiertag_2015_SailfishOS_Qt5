@@ -27,7 +27,7 @@ Page {
         }
         Label {
             x: Theme.paddingLarge
-            text: "Gabriel Böhme"
+            text: "Christian Güssmer/Gabriel Berkigt"
             color: Theme.primaryColor
 
             font.pixelSize: Theme.fontSizeSmall
@@ -55,7 +55,7 @@ Page {
         }
         Label {
             x: Theme.paddingLarge
-            text: "2.0.0"
+            text: "2.0.18"
             color: Theme.primaryColor
 
             font.pixelSize: Theme.fontSizeSmall

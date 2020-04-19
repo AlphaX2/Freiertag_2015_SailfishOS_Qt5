@@ -180,6 +180,14 @@ Page {
                         text: "2018"
                         onClicked: {year_text = text}
                     }
+                    MenuItem {
+                        text: "2019"
+                        onClicked: {year_text = text}
+                    }
+                    MenuItem {
+                        text: "2020"
+                        onClicked: {year_text = text}
+                    }
                 }
             }
 

@@ -14,45 +14,48 @@ TARGET = harbour-freiertag
 
 CONFIG += sailfishapp
 
-HEADERS += \
-    src/FreiListModel.hpp \
-    src/FreiertagCom.hpp \
-    src/Settings.hpp
-
 SOURCES += src/harbour-freiertag.cpp \
     src/FreiertagCom.cpp \
     src/FreiListModel.cpp \
     src/Settings.cpp
 
-OTHER_FILES += qml/harbour-freiertag.qml \
+DISTFILES += qml/harbour-freiertag.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/FirstPage.qml \
-    qml/pages/SecondPage.qml \
-    rpm/harbour-freiertag.changes.in \
+    rpm/harbour-freiertag.changes.run.in \
     rpm/harbour-freiertag.spec \
     rpm/harbour-freiertag.yaml \
     translations/*.ts \
     harbour-freiertag.desktop \
-    data/2015/feiertage/* \
-    data/2015/ferien/* \
-    data/2016/feiertage/* \
-    data/2016/ferien/* \
-    data/2017/feiertage/* \
-    data/2017/ferien/* \
-    data/2018/feiertage/* \
-    data/2018/ferien/* \
-    qml/pages/MainPage.qml \
-    qml/pages/ResultPage.qml \
-    qml/pages/AboutDialog.qml \
-    qml/cover/ResultCover.qml \
-    qml/cover/StartCover.qml \
-    translations/harbour-freiertag-en.ts
+    data/2015/feiertage/*.ics \
+    data/2015/ferien/*.ics \
+    data/2016/feiertage/*.ics \
+    data/2016/ferien/*.ics \
+    data/2017/feiertage/*.ics \
+    data/2017/ferien/*.ics \
+    data/2018/feiertage/*.ics \
+    data/2018/ferien/*.ics \
+    data/2019/feiertage/*.ics \
+    data/2019/ferien/*.ics \
+    data/2020/feiertage/*.ics \
+    data/2020/ferien/*.ics \
+    rpm/harbour-freiertag.changes
+
+SAILFISHAPP_ICONS = 86x86 108x108 128x128
 
 # to disable building translations every time, comment out the
 # following CONFIG line
 CONFIG += sailfishapp_i18n
+
+# German translation is enabled as an example. If you aren't
+# planning to localize your app, remember to comment out the
+# following TRANSLATIONS line. And also do not forget to
+# modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-freiertag-de.ts
-TRANSLATIONS += translations/harbour-freiertag-en.ts
+
+HEADERS += \
+    src/FreiertagCom.hpp \
+    src/FreiListModel.hpp \
+    src/Settings.hpp
 
 # define data for 2015
 ferien2015.path = /usr/share/harbour-freiertag/data/2015/ferien
@@ -78,6 +81,20 @@ ferien2018.files += data/2018/ferien/*.ics
 feiertage2018.path = /usr/share/harbour-freiertag/data/2018/feiertage
 feiertage2018.files += data/2018/feiertage/*.ics
 
+# define data for 2019
+ferien2019.path = /usr/share/harbour-freiertag/data/2019/ferien
+ferien2019.files += data/2019/ferien/*.ics
+feiertage2019.path = /usr/share/harbour-freiertag/data/2019/feiertage
+feiertage2019.files += data/2019/feiertage/*.ics
+
+
+# define data for 2020
+ferien2020.path = /usr/share/harbour-freiertag/data/2020/ferien
+ferien2020.files += data/2020/ferien/*.ics
+feiertage2020.path = /usr/share/harbour-freiertag/data/2020/feiertage
+feiertage2020.files += data/2020/feiertage/*.ics
+
+
 INSTALLS += ferien2015
 INSTALLS += feiertage2015
 
@@ -89,3 +106,9 @@ INSTALLS += feiertage2017
 
 INSTALLS += ferien2018
 INSTALLS += feiertage2018
+
+INSTALLS += ferien2019
+INSTALLS += feiertage2019
+
+INSTALLS += ferien2020
+INSTALLS += feiertage2020

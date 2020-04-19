@@ -12,11 +12,11 @@ Name:       harbour-freiertag
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
-Summary:    Freiertag Application
-Version:    2.0
+Summary:    Application to show german holidays.
+Version:    2.18
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
+License:    GPLv3
 URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-freiertag.yaml
@@ -28,7 +28,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my SailfishOS Application
+Application can show german holidays for all states.
 
 
 %prep
@@ -63,9 +63,10 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-%{_bindir}
+%defattr(644,root,root,-)
+%attr(755,-,-) %{_bindir}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/icons/hicolor/86x86/apps/%{name}.png
+%{_datadir}/icons/hicolor/*/apps/%{name}.png
 # >> files
 # << files
